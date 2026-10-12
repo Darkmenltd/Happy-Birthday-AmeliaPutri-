@@ -1,0 +1,320 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Amelia Putri 💗</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: linear-gradient(135deg, #ffe1ed, #f5e5ff, #fff0dc);
+  color: #67445b;
+  min-height: 100vh;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+.container {
+  width: 90%;
+  max-width: 520px;
+  margin: 35px auto;
+  padding: 28px 22px;
+  background: rgba(255,255,255,0.78);
+  border: 1px solid white;
+  border-radius: 28px;
+  box-shadow: 0 12px 35px rgba(180,100,145,0.16);
+}
+
+.bear {
+  font-size: 65px;
+  margin: 5px 0;
+  animation: bounce 2s infinite;
+}
+
+h1 {
+  color: #e477a5;
+  font-size: 30px;
+  margin: 10px 0;
+}
+
+.subtitle {
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.divider {
+  color: #eaa3c2;
+  letter-spacing: 8px;
+  margin: 22px 0;
+}
+
+.countdown {
+  background: #fff0f6;
+  border-radius: 18px;
+  padding: 16px;
+  margin: 20px 0;
+}
+
+.countdown h3 {
+  margin: 0 0 8px;
+  color: #d86f9e;
+}
+
+#timer {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+button {
+  border: none;
+  border-radius: 30px;
+  padding: 13px 22px;
+  margin: 7px 4px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  background: #ed91b5;
+  color: white;
+  box-shadow: 0 5px 12px #ed91b544;
+}
+
+button:active {
+  transform: scale(.97);
+}
+
+.secondary {
+  background: #c5a3e8;
+}
+
+.letter {
+  display: none;
+  text-align: left;
+  line-height: 1.9;
+  background: #fff7fb;
+  padding: 18px;
+  border-radius: 18px;
+  margin-top: 18px;
+  white-space: pre-line;
+}
+
+.surprise {
+  display: none;
+  font-size: 19px;
+  line-height: 1.8;
+  padding: 18px 0;
+  color: #d66c9b;
+}
+
+.footer {
+  margin-top: 25px;
+  font-size: 12px;
+  color: #a17a91;
+}
+
+.heart {
+  position: fixed;
+  bottom: -30px;
+  pointer-events: none;
+  animation: floatUp 6s linear forwards;
+  z-index: 10;
+}
+
+@keyframes floatUp {
+  to {
+    transform: translateY(-110vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <div class="bear">🧸🎀</div>
+
+  <h1>Happy Birthday!</h1>
+  <h2 style="color:#c58bdc;">Amelia Putri 💗</h2>
+
+  <p class="subtitle">
+    Hari spesial untuk seseorang yang istimewa ✨<br>
+    Semoga hari ini penuh senyum dan kebahagiaan.
+  </p>
+
+  <div class="divider">♡ ♡ ♡</div>
+
+  <div class="countdown">
+    <h3>🎂 Menuju Hari Spesialmu</h3>
+    <div id="timer">Menghitung...</div>
+  </div>
+
+  <button onclick="bukaSurat()">💌 Buka Surat</button>
+  <button class="secondary" onclick="kejutan()">🎁 Kejutan</button>
+  <button onclick="musik()" class="secondary">🎵 Musik</button>
+
+  <div class="letter" id="surat">
+    Untuk Amelia Putri yang spesial 💗
+
+    Selamat ulang tahun, Amelia! 🎂
+
+    Semoga panjang umur, selalu sehat,
+    dimudahkan dalam setiap langkah,
+    dilancarkan rezekinya, dan semua
+    harapan baikmu perlahan menjadi nyata.
+
+    Semoga kamu selalu dikelilingi orang
+    yang tulus menyayangimu. Jangan lupa
+    bahagia, tersenyum, dan tetap menjadi
+    dirimu sendiri.
+
+    Semoga tahun ini membawa banyak
+    cerita indah dan alasan baru untuk
+    bersyukur. ✨
+
+    Dari seseorang yang diam-diam
+    mendoakan kebahagiaanmu.
+
+    — Pria Misterius 💌
+  </div>
+
+  <div class="surprise" id="hadiah">
+    🌷✨💗✨🌷<br><br>
+    Amelia, kamu pantas mendapatkan
+    banyak hal baik dalam hidup.<br><br>
+    Jangan pernah meragukan betapa
+    berharganya dirimu.<br><br>
+    <b>Happy Birthday, Amelia Putri! 🎂</b><br>
+    Semoga bahagiamu selalu bertambah 💖
+  </div>
+
+  <div class="footer">
+    Made with 💗 by Pria Misterius
+  </div>
+</div>
+
+<script>
+function hitungMundur() {
+  const sekarang = new Date();
+  const target = new Date("2026-10-13T00:00:00");
+  const selisih = target - sekarang;
+  const timer = document.getElementById("timer");
+
+  if (selisih > 0) {
+    const hari = Math.floor(selisih / 86400000);
+    const jam = Math.floor((selisih % 86400000) / 3600000);
+    const menit = Math.floor((selisih % 3600000) / 60000);
+    const detik = Math.floor((selisih % 60000) / 1000);
+
+    timer.textContent =
+      hari + " hari " + jam + " jam " +
+      menit + " menit " + detik + " detik";
+  } else {
+    timer.textContent = "Hari ini hari spesialmu! 🎂💗";
+  }
+}
+
+hitungMundur();
+setInterval(hitungMundur, 1000);
+
+function bukaSurat() {
+  const surat = document.getElementById("surat");
+  surat.style.display =
+    surat.style.display === "block" ? "none" : "block";
+}
+
+function kejutan() {
+  const hadiah = document.getElementById("hadiah");
+  hadiah.style.display =
+    hadiah.style.display === "block" ? "none" : "block";
+
+  if (hadiah.style.display === "block") {
+    for (let i = 0; i < 18; i++) buatHati();
+  }
+}
+
+function buatHati() {
+  const hati = document.createElement("div");
+  hati.className = "heart";
+  hati.textContent = ["💗", "💕", "💖", "🌸", "✨"][
+    Math.floor(Math.random() * 5)
+  ];
+  hati.style.left = Math.random() * 100 + "vw";
+  hati.style.fontSize = (16 + Math.random() * 18) + "px";
+  document.body.appendChild(hati);
+  setTimeout(() => hati.remove(), 6000);
+}
+
+setInterval(() => {
+  if (Math.random() > 0.5) buatHati();
+}, 1200);
+
+let audioContext;
+let musicTimer;
+let musicOn = false;
+
+function musik() {
+  if (musicOn) {
+    clearInterval(musicTimer);
+    musicOn = false;
+    return;
+  }
+
+  const AudioCtx = window.AudioContext || window.webkitAudioContext;
+
+  if (!AudioCtx) {
+    alert("Browser kamu belum mendukung fitur musik.");
+    return;
+  }
+
+  audioContext = audioContext || new AudioCtx();
+  audioContext.resume();
+  musicOn = true;
+
+  const nada = [523.25, 659.25, 783.99, 659.25,
+                587.33, 698.46, 880, 783.99];
+  let i = 0;
+
+  function mainkanNada() {
+    if (!musicOn) return;
+
+    const oscillator = audioContext.createOscillator();
+    const volume = audioContext.createGain();
+
+    oscillator.type = "sine";
+    oscillator.frequency.value = nada[i % nada.length];
+    volume.gain.setValueAtTime(0.0001, audioContext.currentTime);
+    volume.gain.exponentialRampToValueAtTime(
+      0.08, audioContext.currentTime + 0.03
+    );
+    volume.gain.exponentialRampToValueAtTime(
+      0.0001, audioContext.currentTime + 0.4
+    );
+
+    oscillator.connect(volume);
+    volume.connect(audioContext.destination);
+    oscillator.start();
+    oscillator.stop(audioContext.currentTime + 0.42);
+
+    i++;
+  }
+
+  mainkanNada();
+  musicTimer = setInterval(mainkanNada, 450);
+}
+</script>
+
+</body>
+</html>
+k
